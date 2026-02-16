@@ -1,166 +1,147 @@
 # coffee-shop-rewards2
 
-## Coreye’s Coffee Cafe — Rewards System 
+# ☕ Coreye’s Coffee Cafe (Triple C’s)
 
-### What you’re building
+### “Coffee. Code. Consistency.”
 
-A tiny rewards system where customers earn points, unlock tiers, and can redeem a reward.
+Welcome to Triple C’s.
 
-### Rules you must support (don’t overthink it)
+We serve:
 
-* Customers earn points from purchases
-* They have a tier (Bronze/Silver/Gold)
-* They can redeem a “Free Drink” for 100 points (if eligible)
+* Strong coffee
+* Clean code
+* Clear logic
 
-### Starter files (create these)
+You’ve been hired to build the rewards system.
 
-* `Customer.java`
-* `Main.java`
-* (Unlocked later) `Purchase.java`
-* (Unlocked later) `RewardsProgram.java`
+Don’t let the Bronze-tier customers finesse free drinks.
 
 ---
 
-# Tier 1 — Beginner Mission: Customer + Points
+## 🎯 The Mission
 
-### Mission
+Customers:
 
-Create a customer model and make points increase from spending.
+* Order items
+* Earn points
+* Unlock tiers
+* Try to redeem rewards
 
-### You must demonstrate
+You:
 
-* fields
-* default + parameterized constructors
-* getters/setters
-* `for` loop
-* `if/else`
+* Build the system
+* Keep it organized
+* Make sure the math is correct
 
-### Acceptance checks (your program must do this)
-
-* You can create **3 customers**
-* You can run a loop that simulates **multiple purchases per customer**
-* You collect **dollars spent** from the user
-* You add points using this rule:
-
-  * 1 point per $1 (whole dollars only)
-  * if spent is at least 10, give a small bonus
-* At the end, print each customer’s name + points
-
-### Constraints
-
-* Don’t add extra classes yet.
-* Keep it simple: one file for Customer, one file for Main.
+No arrays.
+No lists.
+Just solid fundamentals.
 
 ---
 
-# Tier 2 — Intermediate Mission: Purchase Objects + Menu Loop
+## 📁 Required Files
 
-### Mission
-
-Add a second class to represent purchases and simulate ordering from a “menu.”
-
-### You must demonstrate
-
-* a second class with fields + constructor
-* multiple objects stored in a list/array (or repeated variables if you’re not ready)
-* loops that iterate over “menu items”
-* conditional logic tied to purchase properties
-
-### Acceptance checks
-
-* You have a `Purchase` class (you choose the exact fields, but it must support “type” and “price” somehow)
-* In `Main`, you build a menu of **at least 6 purchases**
-* Each customer “orders” **3 items**
-* Points calculation now includes:
-
-  * base points based on price
-  * at least **two different bonus rules** triggered by purchase info
-
-> You’re not being told exactly how to store the menu or simulate orders — pick an approach and make it work.
+```
+Customer.java
+Purchase.java
+Main.java
+```
 
 ---
 
-# Tier 3 — Difficult Mission: Tiers + Redemption
+# 🟢 Level 1 — “Open the Shop”
 
-### Mission
+Create a `Customer`.
 
-Customers now have a tier label, and they can redeem a reward if eligible.
+Fields:
 
-### You must demonstrate
+* name
+* phoneNumber
+* points
 
-* a method that derives tier from points
-* redemption logic with validation
-* summarizing results cleanly
+Include:
 
-### Acceptance checks
+* Default constructor
+* Parameterized constructor
+* Getters and setters
 
-* Your customer can report their tier:
+Create multiple customers.
+Let them earn points.
+Print their totals.
 
-  * < 50 → Bronze
-  * < 150 → Silver
-  * otherwise → Gold
-* After purchases, ask if the customer wants to redeem (Y/N)
-* If they try to redeem:
-
-  * if points < 100 → deny
-  * else subtract 100 and confirm redemption
-* Print a final summary line per customer:
-
-  * Name | Tier | Points
+Nobody starts Gold at Triple C’s.
 
 ---
 
-# Tier 4 — Advanced Mission: Move Logic Out of Main
+# 🟡 Level 2 — “Run the Register”
 
-### Mission
+Create a `Purchase` class.
 
-Main should stop “doing the math.” Business logic belongs in `RewardsProgram`.
+Each item must know:
 
-### You must demonstrate
+* itemName
+* price
+* isDrink
 
-* writing a “service” style class
-* calling methods from Main instead of duplicating logic
-* tier multipliers
+Create at least **6 menu items**.
 
-### Acceptance checks
-
-* You have a `RewardsProgram` class that:
-
-  * calculates points for a purchase
-  * applies points to a customer
-  * applies tier multipliers:
-
-    * Bronze x1
-    * Silver x1.25
-    * Gold x1.5
-* Main mostly:
-
-  * creates objects
-  * loops through scenarios
-  * prints results
-  * calls `RewardsProgram` methods
-* Promo rule:
-
-  * if total spent in a customer’s session is at least 30 → bonus +25 points
+No arrays.
+Just individual object variables.
 
 ---
 
-## Deliverables (what to turn in)
+## ☕ Ordering System
 
-* All 4 `.java` files
-* Clean output that proves each tier works
-* Short comment at the top of `Main` explaining:
 
-  * how you simulated purchases
-  * where your point rules live
+The menu must:
+
+* Display at least once
+* Allow customers to choose items
+* Determine how points are chosen
+
+Update the customer’s points correctly.
 
 ---
 
-## Optional “creative” add-on (still hands-off)
+# 🔴 Level 3 — “Status Matters”
 
-Pick **one**:
+Customers unlock tiers:
 
-* Add a simple text UI menu (1: Buy, 2: Redeem, 3: Summary, 0: Exit)
-* Add “receipt printing” (list items + subtotal + points earned)
-* Add a “VIP Day” boolean toggle that changes bonus behavior
+* Bronze
+* Silver
+* Gold
+
+Add redemption:
+
+Free Drink = 100 points
+
+If they don’t have enough → deny
+If they do → subtract points
+
+At the end, print:
+
+Name | Tier | Points
+
+Clean. Clear. Professional.
+
+---
+
+# 🔵 Level 4 — “Make It Feel Like a Real Checkout”
+
+Triple C’s runs smooth.
+
+While the customer is ordering:
+
+* Track their **session total spent**
+* Print each item as it’s ordered (like a receipt)
+
+When they finish ordering, print:
+
+* Session total
+* Points earned during this session
+* Updated total customer points
+
+Make it feel like a real checkout screen.
+
+
 
